@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Ejercicio Página de Perfil" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./script/script.js" defer></script>
+    <title>Página de Perfil</title>
+  </head>
+  <body>
+    <header>
+      <h1>Perfil</h1>
+      <nav>
+        <ul>
+          <li><a href="">Inicio</a></li>
+          <li><a href="">Mi Perfil</a></li>
+          <li><a href="">Encontrar Conexiones</a></li>
+          <li><a href="">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="left-column">
+        <section id="profile">
+          <div class="sub-container"></div>
+          <img
+            class="profile-pic"
+            src="./img/crash.png"
+            alt="Foto de Perfil de Crash Bandicoot"
+          />
+          <h2 class="profile-name">Crash Bandicoot</h2>
+          <p>Islas Wumpa, Australia</p>
+          <p>
+            Amante de las Wumpa | Destructor de Cajas | Coleccionista de Gemas
+          </p>
+          <p>
+            Hola! Soy Crash Bandicoot, un Aventurero experimentado y Recolector
+            de gemas con un enfoque en enfrentar desafíos complejos y superar
+            obstáculos. A lo largo de mis travesías por las Islas Wumpa, he
+            perfeccionado todas mis habilidades.
+          </p>
+          <button>Editar Perfil</button>
+        </section>
+        <section id="education">
+          <h2>Educación</h2>
+          <p>Universidad Wumpa, Ingeniería en Destrucción de Cajas</p>
+          <p>Marzo 1991 - Septiembre 1996</p>
+          <p>Distinción Máxima en Recolección de Wumpas</p>
+        </section>
+      </div>
+      <div class="right-column">
+        <section id="network">
+          <aside class="connection-requests">
+            <h2>Solicitudes de Conexión (2)</h2>
+            <article class="connection-request">
+              <img
+                class="connections-pic"
+                src="./img/Cortex.webp"
+                alt="Foto de Dr. Neo Cortex"
+              />
+              <p class="connection-name">Dr. Neo Cortex</p>
+              <div class="connection-actions">
+                <button class="accept-btn">
+                  <span class="icon-check">✔</span>
+                </button>
+                <button class="reject-btn">
+                  <span class="icon-cross">✖</span>
+                </button>
+              </div>
+            </article>
+            <article class="connection-request">
+              <img
+                class="connections-pic"
+                src="./img/nitrus_brio.webp"
+                alt="Foto de Dr. Nitrus Brio"
+              />
+              <p class="connection-name">Dr. Nitrus Brio</p>
+              <div class="connection-actions">
+                <button class="accept-btn">
+                  <span class="icon-check">✔</span>
+                </button>
+                <button class="reject-btn">
+                  <span class="icon-cross">✖</span>
+                </button>
+              </div>
+            </article>
+          </aside>
+          <aside class="your-connections">
+            <h2 class="totalConnections">Tus Conexiones (<span class="connectionsValue">500</span>)</h2>
+            <article class="connections">
+              <img
+                class="connections-pic"
+                src="./img/tawna.webp"
+                alt="Foto de Tawna Bandicoot"
+              />
+              <p>Tawna Bandicoot</p>
+            </article>
+            <article class="connections">
+              <img
+                class="connections-pic"
+                src="./img/coco.webp"
+                alt="Foto de Coco Bandicoot"
+              />
+              <p>Coco Bandicoot</p>
+            </article>
+            <article class="connections">
+              <img
+                class="connections-pic"
+                src="./img/akuaku.webp"
+                alt="Foto de Aku Aku"
+              />
+              <p>Aku Aku</p>
+            </article>
+            <article class="connections">
+              <img
+                class="connections-pic"
+                src="./img/crunch.png"
+                alt="Foto de Crunch Bandicoot"
+              />
+              <p>Crunch Bandicoot</p>
+            </article>
+            <article class="connections">
+              <img
+                class="connections-pic"
+                src="./img/pura.webp"
+                alt="Foto del tigre Pura"
+              />
+              <p>Tigre Pura</p>
+            </article>
+            <article class="connections">
+              <img
+                class="connections-pic"
+                src="./img/polar.webp"
+                alt="Foto del oso polar Polar"
+              />
+              <p>Oso Polar</p>
+            </article>
+          </aside>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
