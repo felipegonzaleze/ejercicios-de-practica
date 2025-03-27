@@ -36,5 +36,9 @@ function editProfile() {
   editBtn.addEventListener("click", function() {
     let edit = prompt("Edita tu nombre: ")
     nombre.textContent = edit;
+    function showMessage() {
+      alert("Nombre de perfil cambiado!")
+    }
+    setTimeout(showMessage, 250);
   })
 }
