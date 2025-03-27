@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   removeConnections();
+  editProfile();
 });
 
 function removeConnections() {
@@ -27,4 +28,13 @@ function removeConnections() {
       }
     });
   });
+}
+
+function editProfile() {
+  let editBtn = document.getElementById("edit-profile")
+  let nombre = document.querySelector(".profile-name");
+  editBtn.addEventListener("click", function() {
+    let edit = prompt("Edita tu nombre: ")
+    nombre.textContent = edit;
+  })
 }
