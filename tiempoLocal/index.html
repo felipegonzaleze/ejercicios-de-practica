@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./script/script.js" defer></script>
+    <title>Tiempo Local</title>
+  </head>
+  <body>
+    <header>
+      <h1>Tiempo Local</h1>
+      <nav>
+        <ul>
+          <li><a id="bsas">Buenos Aires</a></li>
+          <li><a id="cdmx">Ciudad de México</a></li>
+          <li><a id="scl">Santiago de Chile</a></li>
+          <li><a id="sp">Sao Paulo</a></li>
+          <li><a id="qto">Quito</a></li>
+        </ul>
+      </nav>
+      <label for="temp-unit">Mostrar temperatura en</label>
+      <select id="temp-unit" name="temp-unit">
+        <option value="Celsius">C°</option>
+        <option value="Fahrenheit">F°</option>
+        <option value="Kelvin">K°</option>
+      </select>
+    </header>
+    <main>
+      <h1 class="city-name">Santiago de Chile</h1>
+      <section class="city-weather">
+        <article class="weather-card">
+            <img 
+            class="weather-icon"
+            src="./img/cloud-sun-solid.svg"
+            alt="Foto de clima parcialmente nublado"
+            >
+            <h3 class="weather-day">Hoy</h3>
+            <p class="weather-description">Parcialmente nublado</p>
+            <p class="weather-temperature">24°/11°</p>
+        </article>
+        <article class="weather-card">
+            <img 
+            class="weather-icon"
+            src="./img/cloud-sun-solid.svg"
+            alt="Foto de clima parcialmente nublado"
+            >
+            <h3 class="weather-day">Mañana</h3>
+            <p class="weather-description">Parcialmente nublado</p>
+            <p class="weather-temperature">24°/10°</p>
+        </article>
+        <article class="weather-card">
+            <img 
+            class="weather-icon"
+            src="./img/cloud-sun-solid.svg"
+            alt="Foto de clima parcialmente nublado"
+            >
+            <h3 class="weather-day">Miércoles</h3>
+            <p class="weather-description">Parcialmente nublado</p>
+            <p class="weather-temperature">25°/11°</p>
+        </article>
+        <article class="weather-card">
+            <img 
+            class="weather-icon"
+            src="./img/sun-solid.svg"
+            alt="Foto de clima soleado"
+            >
+            <h3 class="weather-day">Jueves</h3>
+            <p class="weather-description">Soleado</p>
+            <p class="weather-temperature">28°/13°</p>
+        </article>
+        <article class="weather-card">
+            <img 
+            class="weather-icon"
+            src="./img/sun-solid.svg"
+            alt="Foto de clima soleado"
+            >
+            <h3 class="weather-day">Viernes</h3>
+            <p class="weather-description">Soleado</p>
+            <p class="weather-temperature">29°/15°</p>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <p class="cookies">
+        Detente! Tiempo de cookies. Usamos cookies (tristemente, no las
+        comestibles) para personalizar contenido y anuncios, proporcionar
+        funciones de redes sociales y analizar nuestro tráfico.
+        <a href="" target="_blank">Lee más...</a>
+        <button>Acepto</button>
+      </p>
+    </footer>
+  </body>
+</html>
