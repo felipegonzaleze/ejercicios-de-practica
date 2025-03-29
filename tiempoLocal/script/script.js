@@ -1,15 +1,45 @@
 document.addEventListener("DOMContentLoaded", function() {
+    cityWeather();
     changeTempUnit();
     removeCookies();
 })
 
 const weatherData = {
-	"Buenos Aires" : {today : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 19, 13], tomorrow: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 19, 17], wednesday: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 21, 15], thursday: [".img/sun-solid.svg", "Soleado", 28, 13], friday: [".img/cloud-sun-solid.svg", "Parcialmente Nublado", 17, 13]},
-	"Ciudad de México": {today : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 29, 13], tomorrow: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 28, 13], wednesday: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 28, 13], thursday: [".img/cloud-sun-solid.svg", "Parcialmente Nublado", 28, 13], friday: [".img/sun-solid.svg", "Soleado", 28, 13]},
-	"Santiago de Chile": {today : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 24, 11], tomorrow: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 24, 10], wednesday: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 25, 11], thursday: [".img/sun-solid.svg", "Soleado", 28, 13], friday: [".img/sun-solid.svg", "Soleado", 29, 15]},
-	"Sao Paulo": {today : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 32, 21], tomorrow: ["./img/rain-solid.svg", "Lluvia", 29, 19], wednesday: ["./img/rain-solid.svg", "Lluvia", 29, 21], thursday: [".img/rain-solid.svg", "Lluvia", 29, 20], friday: [".img/rain-solid.svg", "Lluvia", 25, 19]},
-	"Quito": {today : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 15, 10], tomorrow: ["./img/rain-solid.svg", "Lluvia", 17, 11], wednesday: ["./img/rain-solid.svg", "Lluvia", 17, 9], thursday: [".img/rain-solid.svg", "Lluvia", 18, 9], friday: [".img/rain-solid.svg", "Lluvia", 16, 10]}
+	"bsas" : {Hoy : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 19, 13], Mañana: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 19, 17], Miercóles: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 21, 15], Jueves: ["./img/sun-solid.svg", "Soleado", 28, 13], Viernes: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 17, 13]},
+	"cdmx": {Hoy : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 29, 13], Mañana: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 28, 13], Miercóles: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 28, 13], Jueves: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 28, 13], Viernes: ["./img/sun-solid.svg", "Soleado", 28, 13]},
+	"scl": {Hoy : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 24, 11], Mañana: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 24, 10], Miercóles: ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 25, 11], Jueves: ["./img/sun-solid.svg", "Soleado", 28, 13], Viernes: ["./img/sun-solid.svg", "Soleado", 29, 15]},
+	"sp": {Hoy : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 32, 21], Mañana: ["./img/rain-solid.svg", "Lluvia", 29, 19], Miercóles: ["./img/rain-solid.svg", "Lluvia", 29, 21], Jueves: ["./img/rain-solid.svg", "Lluvia", 29, 20], Viernes: ["./img/rain-solid.svg", "Lluvia", 25, 19]},
+	"qto": {Hoy : ["./img/cloud-sun-solid.svg", "Parcialmente Nublado", 15, 10], Mañana: ["./img/rain-solid.svg", "Lluvia", 17, 11], Miercóles: ["./img/rain-solid.svg", "Lluvia", 17, 9], Jueves: ["./img/rain-solid.svg", "Lluvia", 18, 9], Viernes: ["./img/rain-solid.svg", "Lluvia", 16, 10]}
+};
+
+const days = ["Hoy", "Mañana", "Miercóles", "Jueves", "Viernes"];
+
+function cityWeather () {
+    let countryList = document.querySelectorAll("#country li");
+    let weatherCards = document.querySelectorAll(".weather-card");
+    let cityName = document.querySelector(".city-name")
+    countryList.forEach(function (country) {
+        country.addEventListener("click", function() {
+            let city = this.querySelector("a");
+            let cityId = this.querySelector("a").id;
+            cityName.textContent = city.textContent;
+            let cityData = weatherData[cityId]
+            weatherCards.forEach(function (card, day_index) {
+                const day = days[day_index]
+                const [weatherIcon, weatherDescription, weatherTempMax, weatherTempMin] = cityData[day];
+                card.querySelector(".weather-icon").src = weatherIcon;
+                card.querySelector(".weather-description").textContent = weatherDescription;
+                card.querySelector(".unitMax").textContent = weatherTempMax;
+                card.querySelector(".unitMin").textContent = weatherTempMin;
+            })
+        })
+    })
 }
+
+
+
+
+
 
 let actualUnit = "Celsius"
 function changeTempUnit() {
