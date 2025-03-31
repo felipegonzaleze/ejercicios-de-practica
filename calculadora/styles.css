@@ -73,6 +73,7 @@ button {
 }
 
 hr {
-    height: 3px;
+    height: 4px;
     border: none;
+    margin: 0;
 }
