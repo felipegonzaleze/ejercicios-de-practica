@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  alert("Cargando Reporte del Clima");
   cityWeather();
   changeTempUnit();
   removeCookies();
@@ -45,7 +46,6 @@ const weatherData = {
 const days = ["Hoy", "Mañana", "Miércoles", "Jueves", "Viernes"];
 
 // Añadir función para que al cargar la página esta debe mostrar una alerta con la leyenda “Cargando Reporte del Clima”.
-// Corregir bugs respecto a la temperatura
 
 let actualUnit = "Celsius";
 function changeTempUnit() {
@@ -104,7 +104,7 @@ function cityWeather() {
           );
         } else {
           card.querySelector(".unitMax").textContent = weatherTempMax;
-          card.querySelector(".unitMax").textContent = weatherTempMin;
+          card.querySelector(".unitMin").textContent = weatherTempMin;
         }
       });
     });
