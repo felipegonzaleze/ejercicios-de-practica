@@ -99,35 +99,35 @@ console.log("Hay " + contarPares + " números pares."); // Imprimirá "Hay 7 nú
 // Lección 1
 var valor = 50;
 function cambiarValor(nuevoValor) {
-    valor = nuevoValor; 
+  valor = nuevoValor;
 }
 console.log(valor); // Imprimirá 50
 cambiarValor(10); // Cambia valor a 10
 console.log(valor); // Imprimirá 10
 
-// Lección 2  
+// Lección 2
 var miVar = 5;
 function sumarAmiVar(cantidad) {
-    return miVar + cantidad;
+  return miVar + cantidad;
 }
 console.log(miVar); // Imprimirá 5
-var resultado = sumarAmiVar(-10); 
+var resultado = sumarAmiVar(-10);
 console.log(resultado); // Imprimirá -5
 console.log(miVar); // Imprimirá 5
 
 // Lección 3
 function esPalindromo(arreglo) {
-  for(var izquierda=0; izquierda<arreglo.length/2; izquierda++) {
-      var derecha = arreglo.length-1-izquierda;
-      if(arreglo[izquierda] != arreglo[derecha]) {
-          return "No es un palíndromo :(";
-      }
+  for (var izquierda = 0; izquierda < arreglo.length / 2; izquierda++) {
+    var derecha = arreglo.length - 1 - izquierda;
+    if (arreglo[izquierda] != arreglo[derecha]) {
+      return "No es un palíndromo :(";
+    }
   }
   return "¡¡¡SI es un palíndromo!!!";
 }
-var resultado1 = esPalindromo( ["r", "a", "d", "a", "r"] );
+var resultado1 = esPalindromo(["r", "a", "d", "a", "r"]);
 console.log(resultado1); // Imprimirá "¡¡¡SI es un palíndromo!!!"
-var resultado2 = esPalindromo( ["c", "a", "s", "a"] );
+var resultado2 = esPalindromo(["c", "a", "s", "a"]);
 console.log(resultado2); // Imprimirá "No es un palíndromo :("
 
 /* Algoritmos sección 1 - D */
@@ -137,7 +137,7 @@ var caja2 = "pelotas";
 caja2 = caja1;
 console.log(caja2 + " y " + caja1); // Imprimirá "limones y limones"
 
-// Lección 2 
+// Lección 2
 var caja1 = "limones";
 var caja2 = "pelotas";
 console.log(caja1 + " y " + caja2); // Imprimirá "limones y pelotas"
@@ -146,12 +146,12 @@ caja1 = caja2;
 caja2 = temp;
 console.log(caja1 + " y " + caja2); // Imprimirá "pelotas y limones"
 
-// Lección 3 
+// Lección 3
 var inicio = 0;
 var final = 30;
-while(final >= 0)  {
-    console.log("inicio: " + inicio + ", final: " + final);
-    /* Imprimirá 
+while (final >= 0) {
+  console.log("inicio: " + inicio + ", final: " + final);
+  /* Imprimirá 
     "inicio: 0, final: 30"
     "inicio: 5, final: 25"
     "inicio: 10, final: 20"
@@ -160,8 +160,8 @@ while(final >= 0)  {
     "inicio: 25, final: 5"
     "inicio: 30, final: 0"
     */
-    inicio += 5;
-    final -= 5;
+  inicio += 5;
+  final -= 5;
 }
 
 // Lección 4
