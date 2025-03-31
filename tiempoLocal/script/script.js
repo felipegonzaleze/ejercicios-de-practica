@@ -47,34 +47,6 @@ const days = ["Hoy", "Mañana", "Miércoles", "Jueves", "Viernes"];
 // Añadir función para que al cargar la página esta debe mostrar una alerta con la leyenda “Cargando Reporte del Clima”.
 // Corregir bugs respecto a la temperatura
 
-function cityWeather() {
-  let countryList = document.querySelectorAll("#country li");
-  let weatherCards = document.querySelectorAll(".weather-card");
-  let cityName = document.querySelector(".city-name");
-  countryList.forEach(function (country) {
-    country.addEventListener("click", function () {
-      let city = this.querySelector("a");
-      let cityId = this.querySelector("a").id;
-      cityName.textContent = city.textContent;
-      let cityData = weatherData[cityId];
-      weatherCards.forEach(function (card, day_index) {
-        const day = days[day_index];
-        const [
-          weatherIcon,
-          weatherDescription,
-          weatherTempMax,
-          weatherTempMin,
-        ] = cityData[day];
-        card.querySelector(".weather-icon").src = weatherIcon;
-        card.querySelector(".weather-description").textContent =
-          weatherDescription;
-        card.querySelector(".unitMax").textContent = weatherTempMax;
-        card.querySelector(".unitMin").textContent = weatherTempMin;
-      });
-    });
-  });
-}
-
 let actualUnit = "Celsius";
 function changeTempUnit() {
   let unit = document.getElementById("temp-unit");
@@ -99,6 +71,43 @@ function changeTempUnit() {
       });
     }
     actualUnit = selectedUnit;
+  });
+}
+
+function cityWeather() {
+  let countryList = document.querySelectorAll("#country li");
+  let weatherCards = document.querySelectorAll(".weather-card");
+  let cityName = document.querySelector(".city-name");
+  countryList.forEach(function (country) {
+    country.addEventListener("click", function () {
+      let city = this.querySelector("a");
+      let cityId = this.querySelector("a").id;
+      cityName.textContent = city.textContent;
+      let cityData = weatherData[cityId];
+      weatherCards.forEach(function (card, day_index) {
+        const day = days[day_index];
+        const [
+          weatherIcon,
+          weatherDescription,
+          weatherTempMax,
+          weatherTempMin,
+        ] = cityData[day];
+        card.querySelector(".weather-icon").src = weatherIcon;
+        card.querySelector(".weather-description").textContent =
+          weatherDescription;
+        if (actualUnit == "Fahrenheit") {
+          card.querySelector(".unitMax").textContent = Math.round(
+            (weatherTempMax * 9) / 5 + 32
+          );
+          card.querySelector(".unitMin").textContent = Math.round(
+            (weatherTempMin * 9) / 5 + 32
+          );
+        } else {
+          card.querySelector(".unitMax").textContent = weatherTempMax;
+          card.querySelector(".unitMax").textContent = weatherTempMin;
+        }
+      });
+    });
   });
 }
 
