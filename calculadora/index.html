@@ -8,12 +8,15 @@
     <title>Calculadora</title>
   </head>
   <body>
-    <h1>Calculadora</h1>
     <div class="calc">
-      <input type="text" id="display" disabled />
+      <input type="text" id="display" value="0" disabled />
       <div class="buttons">
         <div class="col">
-          <button class="clear">C</button>
+          <div class="clear">
+            <button class="clear-buttons">C</button>
+            <hr>
+            <button class="clear-buttons">DEL</button>
+          </div>
           <button class="number" id="seven">7</button>
           <button class="number" id="four">4</button>
           <button class="number" id="one">1</button>
