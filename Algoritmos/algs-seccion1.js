@@ -46,7 +46,7 @@ calcularTotal([2, 4, 6]);
 // Lección 1
 var haceCalor = true;
 var estáLloviendo = false;
-var temperatura = 25; // supongamos que son grados Celsius
+var temperatura = 25;
 var quéCosasLlevar = "Llevaré";
 
 if (haceCalor) {
