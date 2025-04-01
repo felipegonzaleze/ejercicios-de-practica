@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   dibujarMundo();
   clickearBoton();
+  timer();
 });
 
 function randomInt(min, max) {
@@ -135,5 +136,21 @@ function clickearBoton() {
         setTimeout(win, 500);
       }
     });
-  });
+  });  
+}
+
+function timer () {
+  let tiempo = 0;
+  let timer = document.getElementById("timer");
+
+  function contador () {
+    tiempo++;
+    let minutos = Math.floor(tiempo / 60);
+    let segundos = tiempo % 60;
+    let horas = Math.floor(tiempo / 3600);
+    timer.textContent = `Tiempo: ${String(horas).padStart(2, "0")}:${String(minutos).padStart(2, "0")}:${String(segundos).padStart(2, "0")}`;
+  }
+  setInterval(() => {
+    contador()
+  }, 1000);
 }
