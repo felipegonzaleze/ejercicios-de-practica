@@ -128,9 +128,11 @@ function clickearBoton() {
           todosOff = false;
         }
       });
-
+      function win() {
+        alert("¡Ganaste!")
+      }
       if (todosOff) {
-        alert("¡Ganaste!");
+        setTimeout(win, 500);
       }
     });
   });
