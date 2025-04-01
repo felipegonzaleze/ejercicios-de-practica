@@ -70,10 +70,10 @@ function clickearBoton() {
     boton.addEventListener("click", function () {
       if (this.classList.contains("on")) {
         boton.classList.replace("on", "off");
-      }
-      else if (this.classList.contains("off")) {
+      } else if (this.classList.contains("off")) {
         boton.classList.replace("off", "on");
       }
+
       let fila = parseInt(this.getAttribute("data-fila"));
       let col = parseInt(this.getAttribute("data-col"));
 
@@ -97,7 +97,7 @@ function clickearBoton() {
           up.classList.replace("off", "on");
         }
       }
-      
+
       if (right) {
         if (right.classList.contains("on")) {
           right.classList.replace("on", "off");
@@ -105,7 +105,7 @@ function clickearBoton() {
           right.classList.replace("off", "on");
         }
       }
-      
+
       if (down) {
         if (down.classList.contains("on")) {
           down.classList.replace("on", "off");
@@ -113,14 +113,25 @@ function clickearBoton() {
           down.classList.replace("off", "on");
         }
       }
-      
+
       if (left) {
         if (left.classList.contains("on")) {
           left.classList.replace("on", "off");
         } else if (left.classList.contains("off")) {
           left.classList.replace("off", "on");
         }
-      }      
+      }
+
+      let todosOff = true;
+      botones.forEach(function (boton) {
+        if (boton.classList.contains("on")) {
+          todosOff = false;
+        }
+      });
+
+      if (todosOff) {
+        alert("¡Ganaste!");
+      }
     });
   });
 }
