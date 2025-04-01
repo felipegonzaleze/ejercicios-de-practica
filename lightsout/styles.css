@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tablero {
+    background-color: rgb(51, 49, 49);
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 10px;
+    border-radius: 10px;
+}
+
+.fila {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+.button {
+    height: 125px;
+    width: 125px;
+    background-color: grey;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.on {
+    background-color: yellow;
+}
+
+.off {
+    background-color: grey;
+}
